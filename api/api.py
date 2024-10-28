@@ -15,5 +15,6 @@ def get_score():
     return jsonify({'moyenne': scores})
 
 if __name__ == '__main__':
-    # Assure-toi que l'API écoute sur le bon port
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # host='0.0.0.0' : Cela permet à l'application d'écouter sur toutes les interfaces réseau, 
+    # ce qui est nécessaire pour permettre l'accès externe à l'API.
+    app.run(debug=True, host='0.0.0.0', port=5000) #port=5000 : Définit le port sur lequel l'application API écoutera
