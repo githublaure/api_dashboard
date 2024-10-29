@@ -1,18 +1,18 @@
-import pickle
+import dill as pickle
 import pandas as pd
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
-
+# Définir la classe MoyenneModel ici
 class MoyenneModel:
     def predict(self, data):
         return data.mean()
 
-
+# Charger le modèle
 with open('../models/moyenne.pkl', 'rb') as f:
-    model = pickle.load(f)
+    model = pickle.load(f)  # Utilisez dill pour désérialiser
 
 @app.get('/score')
 async def get_score():
