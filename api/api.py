@@ -12,7 +12,11 @@ class MoyenneModel:
 
 # Charger le modèle
 with open('../models/moyenne.pkl', 'rb') as f:
-    model = pickle.load(f)  # Utilisez dill pour désérialiser
+    model = pickle.load(f)
+
+@app.get('/')
+async def read_root():
+    return {"message": "Bienvenue à l'API de calcul de moyenne!"}
 
 @app.get('/score')
 async def get_score():
