@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Changez cette branche selon vos besoins
+      - main  
   pull_request:
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: test  # Assurez-vous que le test passe avant de déployer
+    needs: test  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -54,9 +54,9 @@ jobs:
         run: |
           # Exemple de commande pour se connecter à EC2 et redémarrer l'application
           ssh -o StrictHostKeyChecking=no -i path/to/your/key.pem ubuntu@your_ec2_public_ip << 'EOF'
-          cd /path/to/your/app  # Chemin vers votre application sur l'instance EC2
+          cd /path/to/your/app  # Chemin vers application sur l'instance EC2
           git pull origin main  # Met à jour le code
-          # Redémarrez votre application (selon votre configuration, par exemple pour Uvicorn ou Streamlit)
+          # Redémarre l'application (selon votre configuration, par exemple pour Uvicorn ou Streamlit)
           # sudo systemctl restart your-service-name
           exit
           EOF
