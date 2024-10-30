@@ -1,13 +1,14 @@
 # api_dashboard
-/votre_projet/
+/api_dashboard/
 ├── api/
 │   ├── api.py
 │   └── models.py
 ├── dashboard/
 │   └── dashboard.py
+   └── dashboard_online.py
 ├── data/
 │   └── processed/
 │       └── data_test.csv
-├── tests/                # Dossier pour les tests
-│   └── test_api.py      # Tests pour l'API
+├── tests/                
+│   └── test_api.py      
 └── requirements.txt
