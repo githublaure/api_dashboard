@@ -4,7 +4,7 @@ import requests  # Pour faire des requêtes HTTP
 import matplotlib.pyplot as plt
 
 # Remplacez par l'adresse publique de votre instance EC2
-API_URL = "http://votre_adresse_ip:5000"
+API_URL = "http://44.220.142.14"
 
 # Chargement du dataset localement pour afficher les notes
 df = pd.read_csv('../data/processed/data_test.csv')
